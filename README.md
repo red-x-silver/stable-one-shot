@@ -2,6 +2,8 @@
 
 Drum one-shot extraction by repurposing a generative foundation model.
 
+Listening examples available [here](https://red-x-silver.github.io/icassp2027/).
+
 Reference implementation and released model adapters for **"Repurposing a Generative Foundation
 Model for Drum One-Shot Extraction"** (Xiaowan Yi and Mathieu Barthet, Centre for Digital Music,
 Queen Mary University of London).
