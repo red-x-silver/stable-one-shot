@@ -1,0 +1,13 @@
+# Stable-one-shot inference dependencies.
+#
+# stable-audio-tools is NOT listed here: it pins its own torch build and is best installed first,
+# into the same environment. See the README ("Setup"):
+#     pip install git+https://github.com/Stability-AI/stable-audio-tools
+#
+# Everything below is already pulled in by stable-audio-tools; the pins are the versions this
+# release was developed and verified against (Python 3.10).
+torch>=2.1            # verified with 2.7.1+cu126
+numpy>=1.23,<2.0
+soundfile>=0.12
+safetensors>=0.4
+torchaudio>=2.1       # only used to resample inputs that are not already 44.1 kHz
