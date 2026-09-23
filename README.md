@@ -28,7 +28,7 @@ loop.wav ─▶ SAME encode ─▶ [ loop | gap | ▓ one-shot ▓ | padding ] �
 
 All six adapters from the paper are bundled in [`models/lora/`](models/lora). They differ only in
 backbone and LoRA rank; MSS is the paired multi-scale spectral similarity against ground truth on
-the 101-200 evaluation set (**lower is better**), FAD is codec-isolated.
+the [101-200 evaluation set](https://zenodo.org/records/22141599) (**lower is better**), FAD is codec-isolated.
 
 | `--adapter` | Backbone | Rank | Trainable params | MSS ↓ | FAD<sub>VGGish</sub> ↓ | FAD<sub>CLAP</sub> ↓ | Size |
 |---|---|:--:|--:|:--:|:--:|:--:|--:|
@@ -40,7 +40,7 @@ the 101-200 evaluation set (**lower is better**), FAD is codec-isolated.
 | **`M-r16`** | SA3-Medium | 16 | 20.7 M | **1.44** | **0.61** | **0.16** | 40 MB |
 
 *For reference on the same benchmark: DOSE scores 2.03 MSS with 497.4 M trainable parameters, and
-the non-adapted SA3-Small backbone scores 4.15 MSS — every adapter here beats both. See Table 1 of
+the non-adapted SA3-Small backbone scores 4.15 MSS — every adapter here outperforms both. See Table 1 of
 the paper for the full comparison.*
 
 **Which should you use?**
@@ -51,7 +51,7 @@ the paper for the full comparison.*
   distributionally more realistic. Costs an 8.6 GB backbone and roughly 2× the inference time.
 
 On SA3-Small, MSS degrades monotonically with rank: the task repurposes existing pathways rather
-than learning new behaviour, so a rank-4 update suffices. On SA3-Medium, rank 16 beats rank 4.
+than learning new behaviour, so a rank-4 update suffices. On SA3-Medium, rank 16 outpeforms rank 4.
 
 ## Setup
 
@@ -187,16 +187,6 @@ models/
   sa3-base-medium/          # <- download SA3-Medium here
 ```
 
-## Citation
-
-```bibtex
-@inproceedings{yi2026stableoneshot,
-  title     = {Repurposing a Generative Foundation Model for Drum One-Shot Extraction},
-  author    = {Yi, Xiaowan and Barthet, Mathieu},
-  booktitle = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  year      = {2026}
-}
-```
 
 ## Licence and attribution
 
