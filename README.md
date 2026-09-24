@@ -21,7 +21,7 @@ new modules:
 ```
 loop.wav ─▶ SAME encode ─▶ [ loop | gap | ▓ one-shot ▓ | padding ] ─▶ DiT (rectified-flow, 50 steps)
                              given  given   GENERATED    masked          ▲
-                                                                   "isolated {kick|snare|hi-hat}
+                                                                   "isolated {kick|snare|hi-hat} drum
                                                                          one-shot"
          ─▶ SAME decode of the generated region ─▶ kick.wav, snare.wav, hihat.wav
 ```
@@ -148,7 +148,7 @@ The DiT then integrates its predicted velocity field from Gaussian noise to a cl
 50-step Euler solver, and only the one-shot region is decoded back to audio.
 
 Instrument selection is pure text conditioning — the prompt template is
-`"isolated {kick|snare|hi-hat} one-shot"`. **The adapters expect exactly this string and it
+`"isolated {kick|snare|hi-hat} drum one-shot"`. **The adapters expect exactly this string and it
 must not be changed**: altering it moves the model off the conditioning it was adapted under.
 
 The adaptation lives entirely in the LoRA weights (rank 4–32 on the DiT's linear projections); the
